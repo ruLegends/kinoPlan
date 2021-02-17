@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="kinoplanTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SHB-4l-SRH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="FSj-8T-5Sk" customClass="SpacexTableViewCell" customModule="kinoplanTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FSj-8T-5Sk" id="7Qj-lP-Xm1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="SHB-4l-SRH" id="FSi-SN-lqg"/>
+                        <segue destination="Hvc-N2-UJK" kind="presentation" identifier="showDetail" modalPresentationStyle="fullScreen" id="68a-Ik-eya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188.40579710144928" y="136.60714285714286"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ZVT-Ib-ufm">
+            <objects>
+                <viewController id="Hvc-N2-UJK" customClass="DetailViewController" customModule="kinoplanTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ytr-uB-UMS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mm-zc-BSP">
+                                <rect key="frame" x="20" y="44" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="BQQ-R6-ifU"/>
+                                    <constraint firstAttribute="height" constant="45" id="mgx-ev-fLn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="rocket"/>
+                                <connections>
+                                    <action selector="onBackTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="EjW-Ww-kED"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-pZ-H6E">
+                                <rect key="frame" x="0.0" y="97" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="fUA-zq-BTp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-yj-qWq">
+                                <rect key="frame" x="20" y="797" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Nh4-oe-GaE"/>
+                                    <constraint firstAttribute="width" constant="55" id="hn4-HL-YXf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="reddit"/>
+                                <connections>
+                                    <action selector="onRedditButtonTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="sGf-IV-B1U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdB-zH-egT">
+                                <rect key="frame" x="85" y="797" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="idT-zp-jIE"/>
+                                    <constraint firstAttribute="width" constant="55" id="qE9-Wo-Xkj"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="wikipedia"/>
+                                <connections>
+                                    <action selector="onWikiButtonTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="zML-vs-8Cp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1d-ry-fsw">
+                                <rect key="frame" x="150" y="797" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="GSe-tp-0dk"/>
+                                    <constraint firstAttribute="height" constant="55" id="ohw-A3-lq3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="article"/>
+                                <connections>
+                                    <action selector="onArticleTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="8JX-1x-aC1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0Y-5a-vwa">
+                                <rect key="frame" x="215" y="797" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="PA9-gx-9DC"/>
+                                    <constraint firstAttribute="height" constant="55" id="abY-U7-6CG"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="youtube"/>
+                                <connections>
+                                    <action selector="onYoutubeButtonTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="w2H-qW-mj2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-8q-Y6K">
+                                <rect key="frame" x="8" y="321" width="58" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="5kf-7F-ILB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiI-XF-ncc">
+                                <rect key="frame" x="329" y="797" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Qpu-yD-Uay"/>
+                                    <constraint firstAttribute="height" constant="55" id="xF2-mu-xqO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="rocket"/>
+                                <connections>
+                                    <action selector="onAlbumButtonTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="tpZ-i0-X4F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RocketName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-nM-Whg">
+                                <rect key="frame" x="8" y="358" width="109" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="launch_site" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-8P-RQ2">
+                                <rect key="frame" x="8" y="390" width="81" height="22"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xRv-nn-ozR">
+                                <rect key="frame" x="177" y="423" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="92V-Oh-9uR"/>
+                                    <constraint firstAttribute="height" constant="60" id="dmY-cI-Z0t"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-VI-4NX">
+                                <rect key="frame" x="329" y="776.5" width="49" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xRv-nn-ozR" firstAttribute="centerY" secondItem="WeP-yS-dlq" secondAttribute="centerY" id="366-QS-msV"/>
+                            <constraint firstItem="kdB-zH-egT" firstAttribute="leading" secondItem="jwL-yj-qWq" secondAttribute="trailing" constant="10" id="37n-9V-5Et"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="bottom" secondItem="y1d-ry-fsw" secondAttribute="bottom" constant="10" id="4TJ-dW-vcX"/>
+                            <constraint firstItem="Mvo-pZ-H6E" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" id="585-pj-ONm"/>
+                            <constraint firstItem="A2K-8P-RQ2" firstAttribute="top" secondItem="Je8-nM-Whg" secondAttribute="bottom" constant="8" id="78t-yX-x0x"/>
+                            <constraint firstItem="u0Y-5a-vwa" firstAttribute="leading" secondItem="y1d-ry-fsw" secondAttribute="trailing" constant="10" id="A2E-11-Afw"/>
+                            <constraint firstItem="Mvo-pZ-H6E" firstAttribute="top" secondItem="4Mm-zc-BSP" secondAttribute="bottom" constant="8" id="BFf-Re-jsR"/>
+                            <constraint firstItem="Je8-nM-Whg" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" constant="8" id="HHG-as-AOw"/>
+                            <constraint firstItem="4Mm-zc-BSP" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" constant="20" id="Ngd-0z-SlO"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A2K-8P-RQ2" secondAttribute="trailing" constant="24" id="QLR-yK-5cD"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="trailing" secondItem="OiI-XF-ncc" secondAttribute="trailing" constant="30" id="XEp-gS-fFK"/>
+                            <constraint firstItem="ukf-VI-4NX" firstAttribute="leading" secondItem="OiI-XF-ncc" secondAttribute="leading" id="Xwt-ZP-9JJ"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="bottom" secondItem="kdB-zH-egT" secondAttribute="bottom" constant="10" id="Y80-Kk-DPW"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="bottom" secondItem="u0Y-5a-vwa" secondAttribute="bottom" constant="10" id="YWx-Ay-01F"/>
+                            <constraint firstItem="A2K-8P-RQ2" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" constant="8" id="ZTk-82-jcR"/>
+                            <constraint firstItem="4Mm-zc-BSP" firstAttribute="top" secondItem="WeP-yS-dlq" secondAttribute="top" id="acj-Y6-KYy"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="bottom" secondItem="jwL-yj-qWq" secondAttribute="bottom" constant="10" id="bTi-ct-Zwb"/>
+                            <constraint firstItem="LIc-8q-Y6K" firstAttribute="top" secondItem="Mvo-pZ-H6E" secondAttribute="bottom" constant="24" id="bcN-IF-Gb5"/>
+                            <constraint firstItem="LIc-8q-Y6K" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" constant="8" id="fTH-oD-wNk"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LIc-8q-Y6K" secondAttribute="trailing" constant="24" id="loS-3U-VLh"/>
+                            <constraint firstItem="y1d-ry-fsw" firstAttribute="leading" secondItem="kdB-zH-egT" secondAttribute="trailing" constant="10" id="ng5-FL-VLC"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ukf-VI-4NX" secondAttribute="trailing" constant="8" id="qir-Rr-emR"/>
+                            <constraint firstItem="Je8-nM-Whg" firstAttribute="top" secondItem="LIc-8q-Y6K" secondAttribute="bottom" constant="8" id="uLJ-Cj-sk8"/>
+                            <constraint firstItem="xRv-nn-ozR" firstAttribute="centerX" secondItem="WeP-yS-dlq" secondAttribute="centerX" id="uWx-5c-cWw"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="bottom" secondItem="OiI-XF-ncc" secondAttribute="bottom" constant="10" id="vkj-Vs-mrc"/>
+                            <constraint firstItem="WeP-yS-dlq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Je8-nM-Whg" secondAttribute="trailing" constant="24" id="xe9-SG-EAQ"/>
+                            <constraint firstItem="OiI-XF-ncc" firstAttribute="top" secondItem="ukf-VI-4NX" secondAttribute="bottom" id="xqQ-1s-l9y"/>
+                            <constraint firstItem="jwL-yj-qWq" firstAttribute="leading" secondItem="WeP-yS-dlq" secondAttribute="leading" constant="20" id="yCP-9b-nUo"/>
+                            <constraint firstItem="Mvo-pZ-H6E" firstAttribute="trailing" secondItem="WeP-yS-dlq" secondAttribute="trailing" id="yw5-Gm-3QX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WeP-yS-dlq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eqY-Cx-f57"/>
+                    <connections>
+                        <outlet property="activityBar" destination="xRv-nn-ozR" id="Ck6-KD-kbW"/>
+                        <outlet property="albumButton" destination="OiI-XF-ncc" id="k5K-8c-WrR"/>
+                        <outlet property="albumLabel" destination="ukf-VI-4NX" id="N15-CT-JEf"/>
+                        <outlet property="articleButton" destination="y1d-ry-fsw" id="uhU-tH-oCv"/>
+                        <outlet property="backButton" destination="4Mm-zc-BSP" id="xVI-fa-9AD"/>
+                        <outlet property="launchSiteName" destination="A2K-8P-RQ2" id="pvn-ZE-fHb"/>
+                        <outlet property="mainImage" destination="Mvo-pZ-H6E" id="XtM-5M-A2I"/>
+                        <outlet property="missionName" destination="LIc-8q-Y6K" id="VeC-ie-oNi"/>
+                        <outlet property="redditButton" destination="jwL-yj-qWq" id="IT8-Ny-cOe"/>
+                        <outlet property="rocketName" destination="Je8-nM-Whg" id="M4m-un-BYM"/>
+                        <outlet property="wikiButton" destination="kdB-zH-egT" id="xfU-wk-1FS"/>
+                        <outlet property="youtubeButton" destination="u0Y-5a-vwa" id="JNV-Ui-lV9"/>
+                        <segue destination="jUD-Qa-iCH" kind="presentation" identifier="showDetail" modalPresentationStyle="fullScreen" id="19Y-Cc-wAi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YG9-23-FL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198.5507246376812" y="136.60714285714286"/>
+        </scene>
+        <!--Images View Controller-->
+        <scene sceneID="Azd-dX-Kgv">
+            <objects>
+                <viewController id="jUD-Qa-iCH" customClass="ImagesViewController" customModule="kinoplanTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9rq-H7-mzh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1AE-Go-Rt5">
+                                <rect key="frame" x="0.0" y="97" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="90T-a8-kgP">
+                                    <size key="itemSize" width="414" height="832"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Ha-cq-z7K" customClass="SpaceXDetailCollectionViewCell" customModule="kinoplanTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-33.5" width="414" height="832"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jt6-qh-czf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="832"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C7a-9O-6E5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="765"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="832"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-xF-QWf">
+                                <rect key="frame" x="20" y="44" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="w1P-Js-C0q"/>
+                                    <constraint firstAttribute="height" constant="45" id="xCB-ac-Sca"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="rocket"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="jUD-Qa-iCH" eventType="touchUpInside" id="PP4-8t-5nE"/>
+                                    <action selector="onBackTap:" destination="Hvc-N2-UJK" eventType="touchUpInside" id="oTz-fW-lOy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1AE-Go-Rt5" firstAttribute="leading" secondItem="oPW-gD-doI" secondAttribute="leading" id="R5N-PS-WU4"/>
+                            <constraint firstItem="1AE-Go-Rt5" firstAttribute="top" secondItem="pz9-xF-QWf" secondAttribute="bottom" constant="8" id="R7G-S9-8WY"/>
+                            <constraint firstItem="1AE-Go-Rt5" firstAttribute="bottom" secondItem="oPW-gD-doI" secondAttribute="bottom" id="T2R-Zo-Bxd"/>
+                            <constraint firstItem="pz9-xF-QWf" firstAttribute="top" secondItem="oPW-gD-doI" secondAttribute="top" id="Yvh-SE-ovK"/>
+                            <constraint firstItem="pz9-xF-QWf" firstAttribute="leading" secondItem="oPW-gD-doI" secondAttribute="leading" constant="20" id="pBf-UL-tgX"/>
+                            <constraint firstItem="1AE-Go-Rt5" firstAttribute="trailing" secondItem="oPW-gD-doI" secondAttribute="trailing" id="pah-bd-MSN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oPW-gD-doI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C6f-2d-cpd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1AE-Go-Rt5" id="SUH-dR-1mM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dph-lM-qdq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207.2463768115945" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="article" width="100" height="100"/>
+        <image name="reddit" width="100" height="100"/>
+        <image name="rocket" width="100" height="100"/>
+        <image name="wikipedia" width="100" height="100"/>
+        <image name="youtube" width="100" height="100"/>
+    </resources>
+</document>
